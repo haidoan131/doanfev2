@@ -18,13 +18,28 @@ export default function FindProduct() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          slidesPerView={6}
+        
           spaceBetween={30}
           pagination={{
             clickable: true,
           }}
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
+          breakpoints={{
+            // Khi màn hình nhỏ hơn 576px (di động), hiển thị 2 slides
+            576: {
+              slidesPerView: 2,
+            },
+            // Khi màn hình lớn hơn 576px và nhỏ hơn 768px (tablet), hiển thị 4 slides
+            768: {
+              slidesPerView: 4,
+            },
+            // Khi màn hình lớn hơn 768px (desktop), hiển thị 6 slides
+            1024: {
+              slidesPerView: 6,
+            },
+          }}
+        
         >
           <SwiperSlide>
             <div class="category-product">

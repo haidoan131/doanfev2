@@ -16,8 +16,8 @@ export default function Banner() {
   return (
     <div className="main-banner">
       <Container>
-        <Row md="2" sm="1" xs="1">
-          <Col >
+        <Row >
+          <Col   xl="6" lg="6" md="12">
             <div className="banner-left">
             <div class="content-info">
                                     <h1 class="title wow pulse" >We Give Preference <br/> To Your<span class="extra-elements-1 post12"><img src={min3} alt="image"/></span>Pets</h1>
@@ -58,7 +58,7 @@ export default function Banner() {
 
             </div>
           </Col>
-          <Col >
+          <Col   xl="6" lg="6" md="12">
                 <div className="banner-right">
                 <div class="single-product-media">
                                 <img src={product4} alt="/"/>
