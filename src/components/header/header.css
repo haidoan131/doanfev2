@@ -1,0 +1,19 @@
+.logo-header{
+    height: 80px;
+    max-width: 180px;
+    object-fit: contain;
+    transition: 0.8s;
+}
+.nav-link{
+    margin-right:20px
+}
+.fuild{
+    padding-left: 80px;
+    padding-right: 80px;
+}
+@media only screen and (max-width: 1199px) {
+    .fuild {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
