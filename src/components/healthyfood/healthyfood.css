@@ -1,0 +1,53 @@
+@media only screen and (max-width: 1480px) {
+    .content-inner-1 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+.site-filters ul {
+    margin: 0;
+    list-style: none;
+    margin-top: auto;
+    padding-left: 0
+}
+.site-filters li {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 5px;
+    margin-right: 25px;
+    background-color: #FFF;
+    border-radius: 30px;
+    border: 1px solid #000;
+}
+.site-filters li.active a {
+    background-color: var(--secondary);
+    color: white;
+}
+.site-filters li a {
+    margin: 0;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px 12px 20px;
+    border-radius: 30px;
+    color: var(--title);
+    font-family: var(--font-family-base);
+}   
+.hea1{
+    visibility: visible;
+    animation-delay: 0.1s;
+    animation-name: fadeInUp;
+
+}
+.site-filters li input {
+    display: none;
+}
+@media only screen and (max-width: 767px) {
+    .site-filters {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .site-filters li{
+        margin-right:0
+    }
+}
