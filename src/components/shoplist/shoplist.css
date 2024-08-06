@@ -63,3 +63,119 @@
         width: 25%;
     }
 }
+
+
+.filter-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.filter-wrapper .filter-left-area {
+    flex: 1;
+}
+.filter-wrapper .filter-left-area, .filter-wrapper .filter-right-area {
+    display: flex;
+    align-items: center;
+}
+.filter-tag {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-tag li {
+    padding: 5px 0;
+}
+.tag-btn {
+    /* padding: 6px 10px; */
+    padding: 3px 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    color: var(--title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tag-btn i {
+    font-size: 18px;
+    color: #000;
+}
+.icon-x:before {
+    content: "\e8f6";
+}
+.tag-btn i {
+    font-size: 18px;
+    color: #000;
+}
+.filter-wrapper .filter-left-area span, .filter-wrapper .filter-right-area span {
+    font-size: 14px;
+    color: var(--title);
+    font-weight: 400;
+}
+.filter-wrapper .filter-left-area, .filter-wrapper .filter-right-area {
+    display: flex;
+    align-items: center;
+}
+.panel-btn {
+    display: none;
+    /* padding: 5px 18px; */
+    color: var(--title);
+}
+.filter-wrapper .filter-right-area .form-group {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+}
+.panel-btn {
+    display: none;
+    /* padding: 5px 18px; */
+    color: var(--title);
+}
+.border-start-0 {
+    border-left: 0 !important;
+}
+.filter-wrapper .filter-right-area .form-group .default-select:not(select), .filter-wrapper .filter-right-area .form-group .bootstrap-select {
+    width: auto !important;
+    border: none;
+}
+.default-select{
+    border:none;
+}
+.filter-wrapper .shop-tab .nav .nav-item .nav-link {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 575px) {
+    .myfilter{
+        display:none
+    }
+}
+@media only screen and (max-width: 1480px) {
+    .filter-tag {
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .filter-wrapper {
+        display: block;
+    }
+}
+.filter-wrapper .filter-left-area, .filter-wrapper .filter-right-area {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 575px) {
+    .filter-wrapper .filter-right-area .Category {
+        display: none;
+    }
+}

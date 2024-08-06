@@ -119,6 +119,7 @@ export default function About() {
             </Swiper>
           </div>
           <div className="col-lg-6 m-b30 align-self-end">
+
           <div class="position-relative">
 								<div class="about-thumb wow fadeInUp" data-wow-delay="0.1s">
 									<img src={about01} alt=""/>
@@ -139,6 +140,7 @@ export default function About() {
 								</div>
 							</div>
           </div>
+          
         </div>
       </Container>
     </div>

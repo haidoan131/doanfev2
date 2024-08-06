@@ -28,7 +28,7 @@ const FilterPanel = () => {
   }
 
   return (
-    <div className="col-20 col-xl-3">
+    <div className="col-20 col-xl-3 myfilter">
       <div className="sticky-xl-top bg-light">
         <a href="javascript:void(0);" className="panel-close-btn">
           <svg width="35" height="35" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
