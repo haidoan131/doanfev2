@@ -36,7 +36,7 @@ export default function Header(args) {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/components/" data-aos="zoom-in" data-aos-duration="1500">
+                <NavLink href="/" data-aos="zoom-in" data-aos-duration="1500">
                   Home
                   <svg
                     width="12"
@@ -55,8 +55,8 @@ export default function Header(args) {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap" data-aos="zoom-in" data-aos-duration="1500">
-                  GitHub
+                <NavLink href="/product" data-aos="zoom-in" data-aos-duration="1500">
+                  Products
                   <svg
                     width="12"
                     height="12"
@@ -75,18 +75,18 @@ export default function Header(args) {
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret data-aos="fade-up" data-aos-duration="2000">
-                  Options
+                  About
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
+                  <DropdownItem href="/about" >About Us</DropdownItem>
+                  <DropdownItem href="/contact" >Contact us</DropdownItem>
+                  {/* <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem> */}
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
-              <a className="nav-link" href="login.html">
+              <a className="nav-link" href="/">
                 Login / Register
               </a>
             </NavbarText>
@@ -148,6 +148,22 @@ export default function Header(args) {
                   />
                 </svg>
               </a>
+            </NavbarText>
+            <NavbarText data-aos="fade-left" data-aos-duration="2000">
+            <a href="/cart" class="nav-link">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_0_115)">
+										<path d="M7.49996 18.3333C7.9602 18.3333 8.33329 17.9602 8.33329 17.5C8.33329 17.0397 7.9602 16.6666 7.49996 16.6666C7.03972 16.6666 6.66663 17.0397 6.66663 17.5C6.66663 17.9602 7.03972 18.3333 7.49996 18.3333Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M16.6667 18.3333C17.1269 18.3333 17.5 17.9602 17.5 17.5C17.5 17.0397 17.1269 16.6666 16.6667 16.6666C16.2065 16.6666 15.8334 17.0397 15.8334 17.5C15.8334 17.9602 16.2065 18.3333 16.6667 18.3333Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<path d="M0.833374 0.833374H4.16671L6.40004 11.9917C6.47625 12.3754 6.68496 12.72 6.98966 12.9653C7.29436 13.2106 7.67562 13.3409 8.06671 13.3334H16.1667C16.5578 13.3409 16.9391 13.2106 17.2438 12.9653C17.5485 12.72 17.7572 12.3754 17.8334 11.9917L19.1667 5.00004H5.00004" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										</g>
+										<defs>
+										<clipPath id="clip0_0_115">
+										<rect width="20" height="20" fill="white"></rect>
+										</clipPath>
+										</defs>
+										</svg>
+									</a>
             </NavbarText>
             <NavbarText data-aos="fade-up" data-aos-duration="1500">
               <a href="javascript:void(0);">

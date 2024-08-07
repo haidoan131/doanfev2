@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function LatestPost() {
   return (
     <div>
-      <Container className="text-post">
+      <Container className="text-post" data-aos="fade-up" data-aos-duration="1500">
         <div
           class="section-head wow fadeInUp d-flex justify-content-between align-items-center mb-3"
           data-wow-delay="0.1s"
@@ -23,7 +23,7 @@ export default function LatestPost() {
           </a>
         </div>
       </Container>
-      <Swiper
+      <Swiper data-aos="fade-up" data-aos-duration="2500"
         spaceBetween={10}
         autoplay={{
             delay: 2000,

@@ -1,24 +1,35 @@
 import React from 'react';
 import pr1 from "./../../images/shop/pr-1.jpg"
-const ProductCard = () => {
+import {useSelector,useDispatch} from "react-redux"
+import {addItem} from "./../../redux/cartSlice"
+
+const ProductCard = (props) => {
+
+  const {item}=props
+  const dispatch=useDispatch()
+  const  handle_add=(id)=>{
+    console.log(id)
+    dispatch(addItem(id))
+}
   return (
     <>
         <li 
           className="card-container col-sm-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 Begs wow fadeInUp DogsFood HamsterFood ParrotFood" 
           data-wow-delay="0.1s" 
           style={{ animationDelay: '0.1s', animationName: 'fadeInUp' }}
+          data-aos="flip-left" data-aos-duration="1500"
         >
           <div className="shop-card">
             <div className="dz-media">
-              <img src={pr1} alt="Dog Body Belt" />
+              <img src={item.img} alt="Dog Body Belt" />
               <div className="shop-meta">
-                <a href="shop-cart.html" className="meta-icon dz-wishicon">
+                <button onClick={()=>handle_add(item)} className="meta-icon dz-wishicon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 9.25001H18.401L14.624 3.58401C14.394 3.23901 13.927 3.14501 13.584 3.37601C13.239 3.60601 13.146 4.07101 13.376 4.41601L16.599 9.25001H7.401L10.624 4.41601C10.854 4.07101 10.761 3.60601 10.416 3.37601C10.071 3.14601 9.606 3.23901 9.376 3.58401L5.599 9.25001H3C2.586 9.25001 2.25 9.58601 2.25 10C2.25 10.414 2.586 10.75 3 10.75H3.385L4.943 18.539C5.199 19.82 6.333 20.75 7.64 20.75H16.361C17.668 20.75 18.801 19.82 19.058 18.539L20.616 10.75H21.001C21.415 10.75 21.751 10.414 21.751 10C21.751 9.58601 21.414 9.25001 21 9.25001ZM17.586 18.245C17.469 18.827 16.954 19.25 16.36 19.25H7.64C7.046 19.25 6.531 18.827 6.414 18.245L4.915 10.75H19.085L17.586 18.245Z" fill="black" />
                     <path d="M14.75 14V16C14.75 16.414 14.414 16.75 14 16.75C13.586 16.75 13.25 16.414 13.25 16V14C13.25 13.586 13.586 13.25 14 13.25C14.414 13.25 14.75 13.586 14.75 14ZM10 13.25C9.586 13.25 9.25 13.586 9.25 14V16C9.25 16.414 9.586 16.75 10 16.75C10.414 16.75 10.75 16.414 10.75 16V14C10.75 13.586 10.414 13.25 10 13.25Z" fill="black" />
                   </svg>
-                </a>
-                <a href="javascript:void(0);" className="meta-icon dz-wishicon" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                </button>
+                <a href={`/detail/${item.id}`} className="meta-icon dz-wishicon" >
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M17.9869 10.3438C16.373 13.242 13.3124 15.0424 10.0011 15.0424C6.68754 15.0424 3.62695 13.242 2.01305 10.3438C1.88875 10.1188 1.88875 9.88092 2.01305 9.65607C3.62695 6.75795 6.68754 4.95779 10.0011 4.95779C13.3124 4.95779 16.373 6.75795 17.9869 9.65607C18.1134 9.88092 18.1134 10.1188 17.9869 10.3438ZM19.0179 9.08146C17.1961 5.80932 13.7411 3.77686 10.0011 3.77686C6.25887 3.77686 2.80391 5.80932 0.98211 9.08146C0.656329 9.66529 0.656329 10.3346 0.98211 10.918C2.80391 14.1902 6.25887 16.2231 10.0011 16.2231C13.7411 16.2231 17.1961 14.1902 19.0179 10.918C19.3436 10.3347 19.3436 9.66529 19.0179 9.08146ZM10.0011 12.4224C11.3363 12.4224 12.423 11.3358 12.423 9.99986C12.423 8.66396 11.3363 7.57732 10.0011 7.57732C8.66363 7.57732 7.57699 8.66396 7.57699 9.99986C7.57699 11.3358 8.66367 12.4224 10.0011 12.4224ZM10.0011 6.39639C8.01207 6.39639 6.39606 8.01307 6.39606 9.9999C6.39606 11.9872 8.01211 13.6032 10.0011 13.6032C11.9879 13.6032 13.6039 11.9871 13.6039 9.9999C13.6039 8.01307 11.9879 6.39639 10.0011 6.39639Z" fill="black" />
                   </svg>
@@ -37,9 +48,9 @@ const ProductCard = () => {
               </div>
             </div>
             <div className="product-content">
-              <span className="mb-1">Pet Item</span>
+              <span className="mb-1">{item.cate}</span>
               <h6 className="title">
-                <a href="shop-list.html" target="_blank">Dog Body Belt</a>
+                <a href="shop-list.html" target="_blank">{item.name}</a>
               </h6>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">

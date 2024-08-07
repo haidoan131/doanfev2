@@ -12,7 +12,7 @@ export default function FindProduct() {
   return (
     <div>
       <Container className="mt-5">
-        <h1 data-aos="fade-up" data-aos-duration="1500">Find Product Category</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1500"> Find Product Category</h1>
         <Swiper
           autoplay={{
             delay: 2500,

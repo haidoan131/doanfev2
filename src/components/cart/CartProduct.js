@@ -1,20 +1,21 @@
 import React from 'react'
 import pic5 from "./../../images/shop/shop-cart/pic4.jpg"
-export default function CartProduct() {
+export default function CartProduct(props) {
+    const {item}=props
   return (
   
        <tr>
                       <td class="product-item-img">
                         <img src={pic5} alt="/" />
                       </td>
-                      <td class="product-item-name">Brush for Dogs and Cats</td>
+                      <td class="product-item-name">{item.name}</td>
                       <td class="product-item-price">$40.00</td>
                       <td class="product-item-quantity">
                         <div class="quantity btn-quantity-2 style-1 me-3">
                           <div class="input-group  bootstrap-touchspin bootstrap-touchspin-injected">
                             <input
                               type="text"
-                              value="1"
+                              value={item.quantity}
                               class="quantity-input form-control"
                             />
 

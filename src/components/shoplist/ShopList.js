@@ -1,9 +1,20 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./shoplist.css";
 import FilterPanel from "./FilterPanel";
-import ProductCard from './../healthyfood/ProductCard ';
-
+import ProductCard from './../healthyfood/ProductCard';
+import { fetchUserData1, setCategory } from './../../redux/productapiSlice';
+import { useSelector, useDispatch } from 'react-redux';
 export default function ShopList() {
+  const { products, status, error, selectedCategory } = useSelector(state => state.products);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserData1());
+  }, [dispatch]);
+
+  const handleCategoryChange = (category) => {
+    dispatch(setCategory(category));
+  };
   return (
     <div>
       <div
@@ -224,12 +235,11 @@ export default function ShopList() {
               className="row g-xl-4 g-3"
           
             >
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+              {
+                products.map((item)=> <ProductCard item={item}/>)
+              }
+               
+              
                 </ul>
                     </div>
                 </div>

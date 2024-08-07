@@ -51,7 +51,7 @@ export default function PerCare() {
 						</div>
 					</div> */}
 					<div class="col-lg-4 col-md-12">
-						<h2 class="mb-3 wow flipInX"  >Our Pet Care Services</h2>
+						<h2 class="mb-3 wow flipInX" data-aos="flip-left" data-aos-duration="1000"  >Our Pet Care Services</h2>
 						<ul class="service-list me-3 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 							<li>
 								<a href="javascript:void(0);" class="" id="v-pills-service1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-service1" role="tab" aria-controls="v-pills-service1" aria-selected="false" tabindex="-1">Pet Grooming

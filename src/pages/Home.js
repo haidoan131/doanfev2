@@ -21,7 +21,9 @@ export default function Home() {
     <Gallery/>
     <About/>
     <LatestPost/>
+    
     <Footer/>
+   
     </div>
   )
 }

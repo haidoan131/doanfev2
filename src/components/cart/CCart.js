@@ -3,7 +3,10 @@ import "./cart.css";
 import pic5 from "./../../images/shop/shop-cart/pic4.jpg";
 import picc2 from "./../../images/shop/shop-cart/pic4.jpg"
 import CartProduct from "./CartProduct";
+import {useSelector,useDispatch} from "react-redux"
 export default function CCart() {
+  const dispatch=useDispatch()
+  const {items}=useSelector(state=>state.carts)
   return (
     <div>
       <div
@@ -45,7 +48,11 @@ export default function CCart() {
                     </tr>
                   </thead>
                   <tbody>
-                    <CartProduct />
+                    {
+                    items&& items.map((item)=>
+                      <CartProduct item={item} />
+                    )}
+                    
                   </tbody>
                 </table>
               </div>
@@ -73,7 +80,7 @@ export default function CCart() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 mt-5">
+                <div class="col-md-6">
                   <a href="shop-cart.html" class="btn btn-secondary">
                     UPDATE CART
                   </a>

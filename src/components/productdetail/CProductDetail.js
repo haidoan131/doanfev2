@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect}from "react";
 import { Container } from "reactstrap";
 import baby2 from "./../../images/products/baby-seat2.png";
 import "./productdetail.css";
@@ -7,9 +7,29 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductById } from './../../redux/productapiSlice'; // Cập nhật đường dẫn nếu cần
 export default function CProductDetail() {
+  const dispatch = useDispatch();
+  const { selectedProduct, status, error } = useSelector(state => state.products);
+  const {id}=useParams()
+  console.log(id)
+  useEffect(() => {
+   
+    if (id) {
+      dispatch(fetchProductById(id));
+    }
+  }, [dispatch, id]);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+  if (selectedProduct)
   return (
     <div>
       <Container>
@@ -27,7 +47,7 @@ export default function CProductDetail() {
               onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide>
-                <img src={baby2} />
+                <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide>
               <SwiperSlide>
                 <img src={baby2} />
@@ -44,7 +64,7 @@ export default function CProductDetail() {
               <div class="dz-content-start">
                 <span class="badge bg-black mb-2">SALE 20% Off</span>
                 <h4 class="title mb-1">
-                  <a href="shop-list.html">Dog Body Belt all Dog Fit</a>
+                  <a href="shop-list.html">{selectedProduct.name}</a>
                 </h4>
                 <div class="review-num">
                   <ul class="dz-rating me-2">
