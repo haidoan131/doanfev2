@@ -43,3 +43,17 @@ footer .footer-bg-img img {
             height: 25%;
         }
     }
+
+    @media only screen and (max-width: 575px) {
+        footer .footer-top {
+            padding: 0;
+            margin:0
+        }
+    }
+
+    @media only screen and (max-width: 1408px) {
+        .mygaly.content-inner {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }

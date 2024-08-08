@@ -5,7 +5,7 @@ import "./gallery.css";
 export default function Gallery() {
   return (
     <div>
-      <div class="container-fluid bg-light content-inner">
+      <div class="container-fluid bg-light mygaly content-inner">
 			<div class="gallery-wrapper" id="lightgallery2">
 				<div class="gallery-col">
 					<div class="gallery-item m-b30">

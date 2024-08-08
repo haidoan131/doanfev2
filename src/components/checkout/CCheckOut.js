@@ -1,21 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import "./checkout.css";
-import pic1 from "./../../images/shop/shop-cart/pic1.jpg"
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import emailjs from 'emailjs-com';
 
 export default function CCheckOut() {
+  const [email, setEmail] = useState("");
+  const { items } = useSelector(state => state.carts);
+  const navigate = useNavigate();
+
+  const totalPrice = items.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+  const handlePlaceOrder = () => {
+    if (email === "") {
+      alert("Email không được trống");
+      return;
+    }
+
+    // Collect cart details
+    const cartDetails = items.map(item => 
+      `Product: ${item.name}, Price: $${item.price}, Quantity: ${item.quantity}, Subtotal: $${item.price * item.quantity}`
+    ).join('<br>');
+
+    // Define email parameters
+    const emailParams = {
+      to_email: email,
+      subject: 'Your Order Details',
+      message: `
+        <h1>Your Order</h1>
+        <p>${cartDetails}</p>
+        <p>Total Price: $${totalPrice.toFixed(2)}</p>
+        <h3>Order Summary</h3>
+        ${items.map(item => `<div><img src="${item.img}" alt="${item.name}" style="max-width: 100px; max-height: 100px;"/><p>${item.name}<br/>Quantity: ${item.quantity}<br/>Price: $${item.price}</p></div>`).join('<br>')}
+      `
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_9q1fuew', 'template_nigomtv', emailParams, 'j3GsaVenuLN435Rmv')
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+        navigate('/checkout'); // Redirect to checkout page
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        alert("Có lỗi xảy ra khi gửi email. Vui lòng thử lại.");
+      });
+  };
+
   return (
     <div>
       <div
         className="dz-bnr-inr style-1"
         style={{
-          backgroundImage:
-            "url(https://petperks.dexignzone.com/xhtml/images/background/bg-shape.jpg)",
+          backgroundImage: "url(https://petperks.dexignzone.com/xhtml/images/background/bg-shape.jpg)",
         }}
       >
         <div className="container">
           <div className="dz-bnr-inr-entry">
             <h1>Check Out</h1>
-            <nav aria-label="breadcrumb" className="breadcrumb-row ">
+            <nav aria-label="breadcrumb" className="breadcrumb-row">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
                   <a href="index.html">Home</a>
@@ -31,73 +74,67 @@ export default function CCheckOut() {
         <div className="container">
           <div className="row shop-checkout">
             <div className="col-xl-8">
-              <h6 class="title m-b15">Billing details</h6>
-              <div
-                class="accordion dz-accordion accordion-sm"
-                id="accordionFaq"
-              >
-                <div class="accordion-item bg-transparent">
-                  <h2 class="accordion-header" id="headingOne">
+              <h6 className="title m-b15">Billing details</h6>
+              <div className="accordion dz-accordion accordion-sm" id="accordionFaq">
+                <div className="accordion-item bg-transparent">
+                  <h2 className="accordion-header" id="headingOne">
                     <a
                       href="#"
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
                       aria-expanded="false"
                       aria-controls="collapseOne"
                     >
                       Returning customer? &nbsp;{" "}
-                      <span class="text-primary">Click here to login</span>
-                      <span class="toggle-close"></span>
+                      <span className="text-primary">Click here to login</span>
+                      <span className="toggle-close"></span>
                     </a>
                   </h2>
                   <div
                     id="collapseOne"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="headingOne"
                     data-bs-parent="#accordionFaq"
                   >
-                    <div class="accordion-body">
-                      <p class="m-b0">
-                        If your order has not yet shipped, you can contact us to
-                        change your shipping address
+                    <div className="accordion-body">
+                      <p className="m-b0">
+                        If your order has not yet shipped, you can contact us to change your shipping address.
                       </p>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item bg-transparent">
-                  <h2 class="accordion-header" id="headingTwo">
+                <div className="accordion-item bg-transparent">
+                  <h2 className="accordion-header" id="headingTwo">
                     <a
                       href="#"
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
                       aria-expanded="false"
-                      aria-controls="collapseOne"
+                      aria-controls="collapseTwo"
                     >
                       Have a coupon? &nbsp;{" "}
-                      <span class="text-primary">
-                        Click here to enter your code
-                      </span>
-                      <span class="toggle-close"></span>
+                      <span className="text-primary">Click here to enter your code</span>
+                      <span className="toggle-close"></span>
                     </a>
                   </h2>
                   <div
                     id="collapseTwo"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="headingTwo"
                     data-bs-parent="#accordionFaq"
                   >
-                    <div class="accordion-body">
-                      <p class="m-b0">
-                        If your order has not yet shipped, you can contact us to
-                        change your shipping address
+                    <div className="accordion-body">
+                      <p className="m-b0">
+                        If your order has not yet shipped, you can contact us to change your shipping address.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
               <form className="row">
+                {/* Form Fields */}
                 <div className="col-md-6">
                   <div className="form-group m-b25 m-t10">
                     <label className="label-title">First Name</label>
@@ -116,9 +153,7 @@ export default function CCheckOut() {
                 </div>
                 <div className="col-md-12">
                   <div className="form-group m-b25">
-                    <label className="label-title">
-                      Company name (optional)
-                    </label>
+                    <label className="label-title">Company name (optional)</label>
                     <input name="companyName" className="form-control" />
                   </div>
                 </div>
@@ -207,6 +242,8 @@ export default function CCheckOut() {
                       required
                       className="form-control"
                       type="email"
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
@@ -262,34 +299,24 @@ export default function CCheckOut() {
             </div>
 
             <div className="col-xl-4 side-bar">
-              <h4 class="title m-b15">Your Order</h4>
+              <h4 className="title m-b15">Your Order</h4>
               <div className="order-detail sticky-top">
-                <div className="cart-item style-1">
-                  <div className="dz-media">
-                    <img src={pic1} alt="/" />
+                {items.map((item) => (
+                  <div className="cart-item style-1 mb-0" key={item.id}>
+                    <div className="dz-media">
+                      <img src={item.img} alt={item.name} />
+                    </div>
+                    <div className="dz-content">
+                      <h6 className="title mb-0">{item.name}<br />Quantity: {item.quantity}</h6>
+                      <span className="price">${item.price.toFixed(2)}</span>
+                    </div>
                   </div>
-                  <div className="dz-content">
-                    <h6 className="title mb-0">
-                      Pet Bed For
-                      <br /> Dog
-                    </h6>
-                    <span className="price">$40.00</span>
-                  </div>
-                </div>
-                <div className="cart-item style-1 mb-0">
-                  <div className="dz-media">
-                    <img src={pic1} alt="/" />
-                  </div>
-                  <div className="dz-content">
-                    <h6 className="title mb-0">Dog Chew Toys</h6>
-                    <span className="price">$40.00</span>
-                  </div>
-                </div>
+                ))}
                 <table>
                   <tbody>
                     <tr className="subtotal">
                       <td>Subtotal</td>
-                      <td className="price">$100</td>
+                      <td className="price">${totalPrice.toFixed(2)}</td>
                     </tr>
                     <tr className="title">
                       <td>
@@ -332,11 +359,10 @@ export default function CCheckOut() {
                     </tr>
                     <tr className="total">
                       <td>Total</td>
-                      <td className="price">$125.75</td>
+                      <td className="price">${totalPrice.toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
-
                 <div
                   className="accordion dz-accordion accordion-sm"
                   id="accordionFaq1"
@@ -374,10 +400,7 @@ export default function CCheckOut() {
                     >
                       <div className="accordion-body">
                         <p className="m-b0">
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
-                          Your order will not be shipped until the funds have
-                          cleared in our account.
+                          Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                         </p>
                       </div>
                     </div>
@@ -414,10 +437,7 @@ export default function CCheckOut() {
                     >
                       <div className="accordion-body">
                         <p className="m-b0">
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
-                          Your order will not be shipped until the funds have
-                          cleared in our account.
+                          Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                         </p>
                       </div>
                     </div>
@@ -442,9 +462,8 @@ export default function CCheckOut() {
                           className="form-check-label"
                           htmlFor="flexRadioDefault4"
                         >
-                          Paypal
+                          PayPal
                         </label>
-                       
                         <a href="javascript:void(0);" className="mypaypal">What is PayPal?</a>
                       </div>
                     </div>
@@ -456,20 +475,14 @@ export default function CCheckOut() {
                     >
                       <div className="accordion-body">
                         <p className="m-b0">
-                          Make your payment directly into our bank account.
-                          Please use your Order ID as the payment reference.
-                          Your order will not be shipped until the funds have
-                          cleared in our account.
+                          Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <p className="text">
-                  Your personal data will be used to process your order, support
-                  your experience throughout this website, and for other
-                  purposes described in our{" "}
-                  <a href="javascript:void(0);">privacy policy.</a>
+                  Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="javascript:void(0);">privacy policy.</a>
                 </p>
                 <div className="form-group">
                   <div className="custom-control custom-checkbox d-flex m-b15">
@@ -482,16 +495,16 @@ export default function CCheckOut() {
                       className="form-check-label"
                       htmlFor="basic_checkbox_2"
                     >
-                      I have read and agree to the website terms and conditions{" "}
+                      I have read and agree to the website terms and conditions
                     </label>
                   </div>
                 </div>
-                <a
-                  href="shop-checkout.html"
+                <button
+                  onClick={handlePlaceOrder}
                   className="btn btn-secondary w-100"
                 >
                   PLACE ORDER
-                </a>
+                </button>
               </div>
             </div>
           </div>

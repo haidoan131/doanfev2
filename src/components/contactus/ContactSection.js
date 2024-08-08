@@ -1,10 +1,28 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-
+import emailjs from 'emailjs-com';
 const ContactSection = () => {
+  const [mess,setMess]=useState("")
   const handleSubmit = (event) => {
+    console.log(mess)
     event.preventDefault();
-    // Add form submission logic here
+     // Define email parameters
+     const emailParams = {
+      to_email: "dnhaichip@gmail.com",
+      subject: 'Your Order Details',
+      message:mess
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_9q1fuew', 'template_nigomtv', emailParams, 'j3GsaVenuLN435Rmv')
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+       
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        alert("Có lỗi xảy ra khi gửi email. Vui lòng thử lại.");
+      });
   };
 
   const onCaptchaChange = (value) => {
@@ -70,12 +88,12 @@ const ContactSection = () => {
                 <label className="form-label title" htmlFor="dzPhoneNumber">Phone Number</label>
                 <div className="input-group">
                   <input
-                    required
+                   
                     type="tel"
                     id="dzPhoneNumber"
                     className="form-control"
                     name="dzPhoneNumber"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="123-456-7890"
                   />
                 </div>
@@ -87,6 +105,8 @@ const ContactSection = () => {
                     rows="4"
                     required
                     className="form-control m-b10"
+                    value={mess}
+                    onChange={(e)=>setMess(e.target.value)}
                   ></textarea>
                 </div>
                 <div className="input-recaptcha m-b30">

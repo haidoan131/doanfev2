@@ -1,50 +1,77 @@
-import React from 'react'
-import pic5 from "./../../images/shop/shop-cart/pic4.jpg"
+import React from 'react';
+import pic5 from './../../images/shop/shop-cart/pic4.jpg';
+import { useDispatch } from 'react-redux';
+import { increaseQuantity, decreaseQuantity, removeItem } from './../../redux/cartSlice';
+
 export default function CartProduct(props) {
-    const {item}=props
+  const { item } = props;
+  const dispatch = useDispatch();
+ 
+  const handleIncrease = () => {
+    dispatch(increaseQuantity(item.id));
+  };
+
+  const handleDecrease = () => {
+    dispatch(decreaseQuantity(item.id));
+  };
+
+  const handleRemove = () => {
+    dispatch(removeItem(item.id));
+  };
+
+  // Calculate the total price directly in the render
+  const totalItemPrice = item.price * item.quantity;
+console.log("load lai khong")
   return (
-  
-       <tr>
-                      <td class="product-item-img">
-                        <img src={pic5} alt="/" />
-                      </td>
-                      <td class="product-item-name">{item.name}</td>
-                      <td class="product-item-price">$40.00</td>
-                      <td class="product-item-quantity">
-                        <div class="quantity btn-quantity-2 style-1 me-3">
-                          <div class="input-group  bootstrap-touchspin bootstrap-touchspin-injected">
-                            <input
-                              type="text"
-                              value={item.quantity}
-                              class="quantity-input form-control"
-                            />
-
-                            <span class="input-group-addon bootstrap-touchspin-vertical-button-wrapper">
-                              <span class="input-group-btn-vertical">
-                                <button
-                                  tabindex="-1"
-                                  class="btn btn-primary bootstrap-touchspin-up "
-                                  type="button"
-                                >
-                                  +
-                                </button>
-                                <button
-                                  tabindex="-1"
-                                  class="btn btn-primary bootstrap-touchspin-down "
-                                  type="button"
-                                >
-                                  −
-                                </button>
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="product-item-totle">$160.00</td>
-                      <td class="product-item-close-2 ">
-                      <button tabindex="-1" class="closecart btn btn-primary bootstrap-touchspin-down " type="button"><i class="fa-solid fa-xmark"></i></button>
-                      </td>
-                    </tr>
-
-  )
+    <tr>
+      <td className="product-item-img">
+        <img src={pic5} alt={item.name} />
+      </td>
+      <td className="product-item-name">{item.name}</td>
+      <td className="product-item-price">${item.price.toFixed(2)}</td>
+      <td className="product-item-quantity">
+        <div className="quantity btn-quantity-2 style-1 me-3">
+          <div className="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+            <input
+              type="text"
+              value={item.quantity}
+              className="quantity-input form-control"
+              readOnly
+            />
+            <span className="input-group-addon bootstrap-touchspin-vertical-button-wrapper">
+              <span className="input-group-btn-vertical">
+                <button
+                  tabIndex="-1"
+                  className="btn btn-primary bootstrap-touchspin-up"
+                  type="button"
+                  onClick={handleIncrease}
+                >
+                  +
+                </button>
+                <button
+                  tabIndex="-1"
+                  className="btn btn-primary bootstrap-touchspin-down"
+                  type="button"
+                  onClick={handleDecrease}
+                >
+                  −
+                </button>
+              </span>
+            </span>
+          </div>
+        </div>
+      </td>
+      <td className="product-item-total">${totalItemPrice.toFixed(2)}</td>
+      <td className="product-item-close-2">
+        <button
+          onClick={handleRemove}
+          tabIndex="-1"
+          className="closecart btn btn-primary bootstrap-touchspin-down"
+          type="button"
+        >
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+      </td>
+    </tr>
+  );
 }

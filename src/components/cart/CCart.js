@@ -7,6 +7,7 @@ import {useSelector,useDispatch} from "react-redux"
 export default function CCart() {
   const dispatch=useDispatch()
   const {items}=useSelector(state=>state.carts)
+  const totalPrice = items.reduce((total, item) => total + (item.price * item.quantity), 0);
   return (
     <div>
       <div
@@ -129,11 +130,11 @@ export default function CCart() {
                       <td>
                         <h6 class="mb-0">Total</h6>
                       </td>
-                      <td class="price">$125.75</td>
+                      <td class="price">${totalPrice.toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
-                <a href="shop-checkout.html" class="btn btn-secondary w-100">
+                <a href="/checkout" class="btn btn-secondary w-100">
                   PLACE ORDER
                 </a>
               </div>

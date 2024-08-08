@@ -1,19 +1,36 @@
-import React,{useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import "./shoplist.css";
 import FilterPanel from "./FilterPanel";
-import ProductCard from './../healthyfood/ProductCard';
-import { fetchUserData1, setCategory } from './../../redux/productapiSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import ProductCard from "./../healthyfood/ProductCard";
+import { fetchUserData1, setCategory } from "./../../redux/productapiSlice";
+import { useSelector, useDispatch } from "react-redux";
 export default function ShopList() {
-  const { products, status, error, selectedCategory } = useSelector(state => state.products);
+  const { products, status, error, selectedCategory } = useSelector(
+    (state) => state.products
+  );
   const dispatch = useDispatch();
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductsPerPage] = useState(5); // Số lượng sản phẩm trên mỗi trang
   useEffect(() => {
     dispatch(fetchUserData1());
   }, [dispatch]);
 
   const handleCategoryChange = (category) => {
     dispatch(setCategory(category));
+  };
+  // Tính toán số sản phẩm cần hiển thị trên trang hiện tại
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  // Tính toán số trang
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
   return (
     <div>
@@ -46,27 +63,7 @@ export default function ShopList() {
             <div className="col-80 col-xl-9 ">
               <div className="filter-wrapper">
                 <div className="filter-left-area">
-                  <ul className="filter-tag">
-                    <li>
-                      <a href="javascript:void(0);" className="tag-btn">
-                        Dog Food
-                       
-                        <i class="fa-solid fa-xmark"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);" className="tag-btn">
-                        Dog Toys
-                        <i class="fa-solid fa-xmark"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="javascript:void(0);" className="tag-btn">
-                        Dog Health
-                        <i class="fa-solid fa-xmark"></i>
-                      </a>
-                    </li>
-                  </ul>
+               
                   <span>Showing 1–5 Of 50 Results</span>
                 </div>
                 <div className="filter-right-area">
@@ -96,7 +93,7 @@ export default function ShopList() {
                         <option>1 Month</option>
                         <option>3 Months</option>
                       </select>
-                
+
                       <div className="dropdown-menu">
                         <div
                           className="inner show"
@@ -122,7 +119,7 @@ export default function ShopList() {
                         <option>1 Month</option>
                         <option>3 Months</option>
                       </select>
-                      
+
                       <div className="dropdown-menu">
                         <div
                           className="inner show"
@@ -228,23 +225,26 @@ export default function ShopList() {
                   </div>
                 </div>
               </div>
-                <div className="row">
-                    <div className="col-12 tab-content shop-">
-                    <ul
-              id="masonry"
-              className="row g-xl-4 g-3"
-          
-            >
-              {
-                products.map((item)=> <ProductCard item={item}/>)
-              }
-               
-              
-                </ul>
+              <div className="row">
+                <div className="col-12 tab-content shop-">
+                  <ul id="masonry" className="row g-xl-4 g-3">
+                    {currentProducts.map((item) => (
+                      <ProductCard key={item.id} item={item} />
+                    ))}
+                  </ul>
+                  <div className="pagination">
+                      {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                          key={index + 1}
+                          onClick={() => handlePageChange(index + 1)}
+                          className={`page-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                        >
+                          {index + 1}
+                        </button>
+                      ))}
                     </div>
                 </div>
-
-
+              </div>
             </div>
           </div>
         </div>

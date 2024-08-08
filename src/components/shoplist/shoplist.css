@@ -179,3 +179,53 @@
         display: none;
     }
 }
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-btn {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .page-btn.active,
+  .page-btn:hover {
+    background: #007bff;
+    color: white;
+  }
+
+  .widget_search .form-group .input-group-addon {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 9;
+}
+
+.widget-title {
+    position: relative;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.widget_categories ul li {
+    padding: 8px 0rem 8px 0 !important;
+    color: #000;
+    font-weight: 600;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    padding: 0.625rem 0rem 0.625rem 1rem !important;
+    line-height: 1.3 !important;
+}
+.widget {
+    margin-bottom: 20px;
+}

@@ -3,30 +3,14 @@ import Nouislider from 'nouislider-react';
 import 'nouislider/distribute/nouislider.css';
 
 const FilterPanel = () => {
-  const [priceRange, setPriceRange] = useState([40, 346]);
+  let [minPrice,setMinPrice]=useState(0)
+  let [maxPrice,setMaxPrice]=useState(0)
+  const handleSliderUpdate = (values) => {
+    setMinPrice(values[0]);
+    setMaxPrice(values[1]);
+ 
 
-  useEffect(() => {
-    const [minPrice, maxPrice] = priceRange;
-    if (!isNaN(minPrice) && !isNaN(maxPrice)) {
-      document.getElementById('slider-margin-value-min').textContent = `Min Price: $${Math.round(minPrice)}`;
-      document.getElementById('slider-margin-value-max').textContent = `Max Price: $${Math.round(maxPrice)}`;
-     
-    }
-  }, [priceRange]);
-
-  const handlePriceChange = (values) => {
-    // Ensure values are numbers and parse correctly
-    const [minPrice, maxPrice] = values.map(value => parseFloat(value));
-  
-    setPriceRange([minPrice*1, maxPrice]);
-    console.log(minPrice*1)
   };
- const onChangeSlide=(data)=> {
-    console.log(data) // logs the value
-    const [minPrice, maxPrice] = ['$110', '$254'];
-    setPriceRange([minPrice, maxPrice]);
-  }
-
   return (
     <div className="col-20 col-xl-3 myfilter">
       <div className="sticky-xl-top bg-light">
@@ -51,7 +35,7 @@ const FilterPanel = () => {
             <div className="widget widget_search">
               <div className="form-group">
                 <div className="input-group">
-                  <input name="dzSearch" required type="search" className="form-control" placeholder="Search Product" />
+                  <input name="dzSearch" required type="search" className="form-control mysearch" placeholder="Search Product" />
                   <div className="input-group-addon">
                     <button name="submit" value="Submit" type="submit" className="btn">
                       <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,21 +51,16 @@ const FilterPanel = () => {
               <h6 className="widget-title">Price</h6>
               <div className="price-slide range-slider">
                 <div className="price">
-                  <Nouislider 
-                    range={{ min: 0, max: 400 }}
-                    start={priceRange}
-                    step={1}
-                    tooltips
-                    connect
-                    onChange={onChangeSlide}
-                    format={{ 
-                      to: value => `$${Math.round(value)}`, 
-                      from: value => parseFloat(value.replace('$', '')) 
-                    }}
-                  />
+                <Nouislider
+        range={{ min: 0, max: 100 }}
+        start={[20, 80]}
+        step={1}
+        tooltips={true}
+        onUpdate={handleSliderUpdate}
+      />
                   <div className="d-flex justify-content-between">
-                    <span className="example-val" id="slider-margin-value-min">Min Price: ${Math.round(priceRange[0])}</span>
-                    <span className="example-val" id="slider-margin-value-max">Max Price: ${Math.round(priceRange[1])}</span>
+                    <span className="example-val" id="slider-margin-value-min">Min Price: ${minPrice}</span>
+                    <span className="example-val" id="slider-margin-value-max">Max Price: ${maxPrice}</span>
                   </div>
                 </div>
               </div>

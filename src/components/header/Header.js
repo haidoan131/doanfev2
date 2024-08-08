@@ -26,8 +26,8 @@ export default function Header(args) {
 
   return (
     <div>
-      <Container fluid className="fluid main-bar" >
-        <Navbar {...args} expand="md" data-aos="fade-down" data-aos-duration="1000">
+      <Container fluid className="fluid main-bar mynav" >
+        <Navbar {...args} expand="md" data-aos="fade-down" data-aos-duration="1000" className="">
           <NavbarBrand href="/" data-aos="fade-right" data-aos-duration="1500">
             <img src={logo} alt="logo" className="logo-header" />
           </NavbarBrand>
