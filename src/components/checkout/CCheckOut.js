@@ -3,7 +3,7 @@ import "./checkout.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import emailjs from 'emailjs-com';
-
+import Swal from 'sweetalert2'
 export default function CCheckOut() {
   const [email, setEmail] = useState("");
   const { items } = useSelector(state => state.carts);
@@ -12,10 +12,19 @@ export default function CCheckOut() {
   const totalPrice = items.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   const handlePlaceOrder = () => {
+
     if (email === "") {
       alert("Email không được trống");
       return;
     }
+
+
+    Swal.fire({
+     
+      title:  `đã gửi đơn hàng về email ${email} vui lòng kiểm tra email `,
+      text:"nhập đúng email mới gửi dc!" ,
+      icon: "success"
+    });
 
     // Collect cart details
     const cartDetails = items.map(item => 

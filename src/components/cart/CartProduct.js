@@ -25,7 +25,7 @@ console.log("load lai khong")
   return (
     <tr>
       <td className="product-item-img">
-        <img src={pic5} alt={item.name} />
+        <img src={item.img} alt={item.name} />
       </td>
       <td className="product-item-name">{item.name}</td>
       <td className="product-item-price">${item.price.toFixed(2)}</td>

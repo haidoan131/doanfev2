@@ -10,11 +10,28 @@ import 'swiper/css/navigation';
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductById } from './../../redux/productapiSlice'; // Cập nhật đường dẫn nếu cần
+import {addItem} from "./../../redux/cartSlice"
+import { increaseQuantity, decreaseQuantity, removeItem } from './../../redux/cartSlice';
+import Swal from 'sweetalert2'
 export default function CProductDetail() {
   const dispatch = useDispatch();
   const { selectedProduct, status, error } = useSelector(state => state.products);
+  const {items}=useSelector(state=>state.carts)
   const {id}=useParams()
   console.log(id)
+
+
+ 
+  const  handle_add=(id)=>{
+   
+    dispatch(addItem(id))
+    Swal.fire({
+     
+      title:  `Bạn đã thêm ${selectedProduct.name} vào giỏ hàng `,
+      text:"Thêm Vào Giỏ Hàng Thành công!" ,
+      icon: "success"
+    });
+}
   useEffect(() => {
    
     if (id) {
@@ -29,10 +46,24 @@ export default function CProductDetail() {
   if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
+  const handleIncrease = () => {
+    if (quantity === 0) {
+      dispatch(addItem(selectedProduct));
+    } else {
+      dispatch(increaseQuantity(selectedProduct.id));
+    }
+   
+  };
+
+  const handleDecrease = () => {
+    dispatch(decreaseQuantity(selectedProduct.id));
+  };
+  const cartItem = items.find(item => item.id === selectedProduct?.id);
+  const quantity = cartItem ? cartItem.quantity : 0;
   if (selectedProduct)
   return (
     <div>
-      <Container>
+      <Container className="myproductdetail">
         <div className="row g-xl-4 g-3">
           <div className="col-xl-6 col-md-6">
             <Swiper
@@ -50,12 +81,12 @@ export default function CProductDetail() {
                 <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={baby2} />
+                <img src={selectedProduct.img} />
               </SwiperSlide>
               <SwiperSlide>
-                <img src={baby2} />
+                <img src={selectedProduct.img} />
               </SwiperSlide> <SwiperSlide>
-                <img src={baby2} />
+                <img src={selectedProduct.img} />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -64,7 +95,7 @@ export default function CProductDetail() {
               <div class="dz-content-start">
                 <span class="badge bg-black mb-2">SALE 20% Off</span>
                 <h4 class="title mb-1">
-                  <a href="shop-list.html">{selectedProduct.name}</a>
+                  <a href="#">{selectedProduct.name}</a>
                 </h4>
                 <div class="review-num">
                   <ul class="dz-rating me-2">
@@ -155,14 +186,14 @@ export default function CProductDetail() {
               <div class="me-3 me-sm-0">
                 <span class="form-label">Price</span>
                 <span class="price-num">
-                  $45.00 <del>$72.17</del>
+                  ${selectedProduct.price}.00 <del>$72.17</del>
                 </span>
               </div>
               <div class="quantity btn-quantity-2 style-1 me-3">
                 <div class="input-group  bootstrap-touchspin bootstrap-touchspin-injected">
                   <input
                     type="text"
-                    value="1"
+                    value={quantity}
                     class="quantity-input form-control"
                   />
 
@@ -172,6 +203,7 @@ export default function CProductDetail() {
                         tabindex="-1"
                         class="btn btn-primary bootstrap-touchspin-up "
                         type="button"
+                        onClick={handleIncrease}
                       >
                         +
                       </button>
@@ -179,6 +211,7 @@ export default function CProductDetail() {
                         tabindex="-1"
                         class="btn btn-primary bootstrap-touchspin-down "
                         type="button"
+                        onClick={handleDecrease}
                       >
                         −
                       </button>
@@ -189,12 +222,13 @@ export default function CProductDetail() {
             </div>
 
             <div class="cart-btn">
-              <a
+              <button
                 href="shop-cart.html"
                 class="btn btn-md btn-secondary text-uppercase"
+                onClick={()=>handle_add(selectedProduct)}
               >
                 Add To Cart
-              </a>
+              </button>
               <a
                 href="shop-wishlist.html"
                 class="btn btn-outline-secondary btn-heart"

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './healthyfood.css';
 import ProductCard from './ProductCard';
 import { fetchUserData1, setCategory } from './../../redux/productapiSlice';
@@ -6,16 +6,29 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function HealthyFood() {
   const { filteredProducts, status, error, selectedCategory } = useSelector(state => state.products);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(8); // Number of products per page
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    setCurrentPage(1); // Reset to page 1 when category or price changes
+  }, [selectedCategory]);
   useEffect(() => {
     dispatch(fetchUserData1());
   }, [dispatch]);
+// Calculate total pages
+const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+const handlePageChange = (pageNumber) => {
+  setCurrentPage(pageNumber);
+};
 
   const handleCategoryChange = (category) => {
     dispatch(setCategory(category));
   };
-
+  // Calculate products for current page
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
   return (
     <div className="content-inner-1 bg-light">
       <div className="container">
@@ -63,10 +76,22 @@ export default function HealthyFood() {
             <ul id="masonry" className="row g-xl-4 g-3">
               {status === 'loading' && <p>Loading...</p>}
               {status === 'failed' && <p>{error}</p>}
-              {filteredProducts && filteredProducts.map(item => (
+              {currentProducts && currentProducts.map(item => (
                 <ProductCard key={item.id} item={item} />
               ))}
+
             </ul>
+            <div className="pagination">
+                      {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                          key={index + 1}
+                          onClick={() => handlePageChange(index + 1)}
+                          className={`page-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                        >
+                          {index + 1}
+                        </button>
+                      ))}
+                    </div>
           </div>
         </div>
       </div>

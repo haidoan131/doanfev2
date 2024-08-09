@@ -12,27 +12,47 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
-  Container
+  Container,
 } from "reactstrap";
 import logo from "./../../images/welcome/logo.png";
 import "./header.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CartProduct from "./../cart/CartProduct";
+import { useSelector, useDispatch } from "react-redux";
 export default function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  const [isActive, setIsActive] = useState(false);
 
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+  const { items } = useSelector((state) => state.carts);
+  const totalPrice = items.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   return (
     <div>
-      <Container fluid className="fluid main-bar mynav" >
-        <Navbar {...args} expand="md" data-aos="fade-down" data-aos-duration="1000" className="">
+      <Container fluid className="fluid main-bar mynav">
+        <Navbar
+          {...args}
+          expand="md"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          className=""
+        >
           <NavbarBrand href="/" data-aos="fade-right" data-aos-duration="1500">
             <img src={logo} alt="logo" className="logo-header" />
           </NavbarBrand>
 
-          <NavbarToggler onClick={toggle} data-aos="fade-left" data-aos-duration="2000" />
+          <NavbarToggler
+            onClick={toggle}
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
@@ -55,7 +75,11 @@ export default function Header(args) {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/product" data-aos="zoom-in" data-aos-duration="1500">
+                <NavLink
+                  href="/product"
+                  data-aos="zoom-in"
+                  data-aos-duration="1500"
+                >
                   Products
                   <svg
                     width="12"
@@ -74,12 +98,17 @@ export default function Header(args) {
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret data-aos="fade-up" data-aos-duration="2000">
+                <DropdownToggle
+                  nav
+                  caret
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
                   About
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem href="/about" >About Us</DropdownItem>
-                  <DropdownItem href="/contact" >Contact us</DropdownItem>
+                  <DropdownItem href="/about">About Us</DropdownItem>
+                  <DropdownItem href="/contact">Contact us</DropdownItem>
                   {/* <DropdownItem divider />
                   <DropdownItem>Reset</DropdownItem> */}
                 </DropdownMenu>
@@ -93,10 +122,8 @@ export default function Header(args) {
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
               <a
                 className="nav-link"
-                href="javascript:void(0);"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasTop"
-                aria-controls="offcanvasTop"
+                href="/product"
+                
               >
                 <svg
                   width="20"
@@ -127,9 +154,7 @@ export default function Header(args) {
               <a
                 className="nav-link"
                 href="javascript:void(0);"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
+               
               >
                 <svg
                   width="20"
@@ -150,20 +175,44 @@ export default function Header(args) {
               </a>
             </NavbarText>
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
-            <a href="/cart" class="nav-link">
-										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<g clip-path="url(#clip0_0_115)">
-										<path d="M7.49996 18.3333C7.9602 18.3333 8.33329 17.9602 8.33329 17.5C8.33329 17.0397 7.9602 16.6666 7.49996 16.6666C7.03972 16.6666 6.66663 17.0397 6.66663 17.5C6.66663 17.9602 7.03972 18.3333 7.49996 18.3333Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M16.6667 18.3333C17.1269 18.3333 17.5 17.9602 17.5 17.5C17.5 17.0397 17.1269 16.6666 16.6667 16.6666C16.2065 16.6666 15.8334 17.0397 15.8334 17.5C15.8334 17.9602 16.2065 18.3333 16.6667 18.3333Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-										<path d="M0.833374 0.833374H4.16671L6.40004 11.9917C6.47625 12.3754 6.68496 12.72 6.98966 12.9653C7.29436 13.2106 7.67562 13.3409 8.06671 13.3334H16.1667C16.5578 13.3409 16.9391 13.2106 17.2438 12.9653C17.5485 12.72 17.7572 12.3754 17.8334 11.9917L19.1667 5.00004H5.00004" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-										</g>
-										<defs>
-										<clipPath id="clip0_0_115">
-										<rect width="20" height="20" fill="white"></rect>
-										</clipPath>
-										</defs>
-										</svg>
-									</a>
+              <button onClick={handleToggle} class="nav-link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_0_115)">
+                    <path
+                      d="M7.49996 18.3333C7.9602 18.3333 8.33329 17.9602 8.33329 17.5C8.33329 17.0397 7.9602 16.6666 7.49996 16.6666C7.03972 16.6666 6.66663 17.0397 6.66663 17.5C6.66663 17.9602 7.03972 18.3333 7.49996 18.3333Z"
+                      stroke="black"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M16.6667 18.3333C17.1269 18.3333 17.5 17.9602 17.5 17.5C17.5 17.0397 17.1269 16.6666 16.6667 16.6666C16.2065 16.6666 15.8334 17.0397 15.8334 17.5C15.8334 17.9602 16.2065 18.3333 16.6667 18.3333Z"
+                      stroke="black"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M0.833374 0.833374H4.16671L6.40004 11.9917C6.47625 12.3754 6.68496 12.72 6.98966 12.9653C7.29436 13.2106 7.67562 13.3409 8.06671 13.3334H16.1667C16.5578 13.3409 16.9391 13.2106 17.2438 12.9653C17.5485 12.72 17.7572 12.3754 17.8334 11.9917L19.1667 5.00004H5.00004"
+                      stroke="black"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_0_115">
+                      <rect width="20" height="20" fill="white"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
             </NavbarText>
             <NavbarText data-aos="fade-up" data-aos-duration="1500">
               <a href="javascript:void(0);">
@@ -183,6 +232,55 @@ export default function Header(args) {
             </NavbarText>
           </Collapse>
         </Navbar>
+        <div className="menu">
+          <div
+            className={`overlay ${isActive ? "active" : ""}`}
+            onClick={handleToggle}
+          ></div>
+          <div className={`sidebar ${isActive ? "active" : ""}`}>
+            <div className="left" onClick={handleToggle}>
+         
+            </div>
+            <div className="right">
+              <div className="d-flex">
+                {" "}
+                <button onClick={handleToggle} className="bg-danger">
+                  X
+                </button>
+                <div className="text-center w-100">Cart</div>
+              </div>
+              <div className="">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <table className="table ">
+                      <thead>
+                        <tr>
+                          <th>Product</th>
+                          <th></th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Subtotal</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {items &&
+                          items.map((item) => <CartProduct item={item} />)}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-total">
+                <h6 class="mb-0">Total:</h6>
+                <h6 class="mb-0">{totalPrice}.00$</h6>
+              </div>
+
+              <a href="/checkout" class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mybuttoncart">Checkout</a>
+              <a href="/cart" class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mt-2 mybuttoncart">View Cart</a>
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   );

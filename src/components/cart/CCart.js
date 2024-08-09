@@ -36,8 +36,8 @@ export default function CCart() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <div className="table-responsive">
-                <table className="table check-tbl">
+              <div className="table-responsive mycart1">
+                <table className="table check-tbl ">
                   <thead>
                     <tr>
                       <th>Product</th>

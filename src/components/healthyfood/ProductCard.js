@@ -2,14 +2,20 @@ import React from 'react';
 import pr1 from "./../../images/shop/pr-1.jpg"
 import {useSelector,useDispatch} from "react-redux"
 import {addItem} from "./../../redux/cartSlice"
-
+import Swal from 'sweetalert2'
 const ProductCard = (props) => {
-
+  const Swal = require('sweetalert2')
   const {item}=props
   const dispatch=useDispatch()
   const  handle_add=(id)=>{
-    console.log(id)
+   
     dispatch(addItem(id))
+    Swal.fire({
+     
+      title:  `Bạn đã thêm ${item.name} vào giỏ hàng `,
+      text:"Thêm Vào Giỏ Hàng Thành công!" ,
+      icon: "success"
+    });
 }
   return (
     <>
@@ -50,7 +56,7 @@ const ProductCard = (props) => {
             <div className="product-content">
               <span className="mb-1">{item.cate}</span>
               <h6 className="title">
-                <a href="shop-list.html" target="_blank">{item.name}</a>
+                <a href={`/detail/${item.id}`}>{item.name}</a>
               </h6>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">

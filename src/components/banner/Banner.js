@@ -22,7 +22,7 @@ export default function Banner() {
             <div class="content-info">
                                     <h1 class="title wow pulse" data-aos="zoom-in" data-aos-duration="1500">We Give Preference <br/> To Your<span class="extra-elements-1 post12"><img src={min3} alt="image"/></span>Pets</h1>
                                     <h5 class="sub-title wow fadeInUp m-b45 m-md-b25" data-aos="zoom-in" data-aos-duration="1500" >No code need. Plus free shipping on <span><a href="#" className="or">$99+</a></span> order!</h5>
-                                    <a href="shop-checkout.html" target="_blank" class="btn btn-secondary">Adopt A Pet  
+                                    <a href="#" class="btn btn-secondary">Adopt A Pet  
 									<svg width="24" height="25" viewBox="0 0 24 25" class="ms-2 pb-1 ms-2" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 										<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>

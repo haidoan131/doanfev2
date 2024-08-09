@@ -112,7 +112,7 @@ export default function PerCare() {
 											<h5 class="ms-3 mb-0">Pet Grooming</h5>
 										</div>	
 										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-										<a href="shop-checkout.html" class="btn btn-secondary">Add Service  
+										<a href="#" class="btn btn-secondary">Add Service  
 											<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-2">
 												<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 												<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>
@@ -160,7 +160,7 @@ export default function PerCare() {
 											<h5 class="ms-3 mb-0">Dog Boarding Kennels</h5>
 										</div>	
 										<p>In addition to our extensive collection, we're equally devoted to ensuring your shopping experience is seamless and enjoyable. Our website is designed with your convenience in mind, offering secure transactions and a responsive customer support team to assist you every step of the way.</p>
-										<a href="shop-checkout.html" class="btn btn-secondary">Add Service  
+										<a href="#" class="btn btn-secondary">Add Service  
 											<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-2">
 												<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 												<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>
@@ -209,7 +209,7 @@ export default function PerCare() {
 										<h5 class="ms-3 mb-0">Dog Training</h5>
 										</div>	
 										<p>At PetPerks, we're dedicated to creating an exclusive fashion destination that transcends the ordinary. Our passion for style, quality, and individuality drives our mission. Our collection is a carefully blend of timeless classics &amp; the latest trends</p>
-										<a href="shop-checkout.html" class="btn btn-secondary">Add Service  
+										<a href="#" class="btn btn-secondary">Add Service  
 											<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-2">
 												<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 												<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>
@@ -257,7 +257,7 @@ export default function PerCare() {
 										<h5 class="ms-3 mb-0">Dog Emergency Services</h5>
 										</div>	
 										<p>Nullam nec ipsum luctus, vehicula massa in, dictum sapien. Aenean quis luctus ert nulla quam augue.Nullam nec ipsum luctus, vehicula massa in, dictum sapien. Aenean quis luctus ert nulla quam augue.</p>
-										<a href="shop-checkout.html" class="btn btn-secondary">Add Service  
+										<a href="#" class="btn btn-secondary">Add Service  
 											<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-2">
 												<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 												<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>
@@ -305,7 +305,7 @@ export default function PerCare() {
 										<h5 class="ms-3 mb-0">Dog Emergency Services55555</h5>
 										</div>	
 										<p>Nullam nec ipsum luctus, vehicula massa in, dictum sapien. Aenean quis luctus ert nulla quam augue.Nullam nec ipsum luctus, vehicula massa in, dictum sapien. Aenean quis luctus ert nulla quam augue.</p>
-										<a href="shop-checkout.html" class="btn btn-secondary">Add Service  
+										<a href="#" class="btn btn-secondary">Add Service  
 											<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ms-2">
 												<path d="M15.0375 13.0662C14.217 12.2892 13.13 11.8562 12 11.8562C10.87 11.8562 9.78297 12.2892 8.9625 13.0662L5.29875 16.5312C3.19875 18.44 4.71375 22.0887 7.54875 21.9462C9.08625 21.905 10.335 21.1175 11.9962 21.1475C13.7175 21.1175 14.9962 21.8112 16.5412 21.9462C19.3275 22.01 20.7675 18.4025 18.6975 16.5312L15.0375 13.0662Z" fill="white"></path>
 												<path d="M21.345 7.97375C19.9125 7.6925 18.8175 9.28625 18.5325 10.6587C17.6775 14.9075 21.795 15.7175 22.7588 11.5962C23.1525 9.83 22.53 8.23625 21.345 7.97375Z" fill="white"></path>

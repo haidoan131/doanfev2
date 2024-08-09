@@ -8,6 +8,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import cate3 from "./../../images/category/cate-3.jpg";
+import cate4 from "./../../images/category/cate-4.jpg";
+import cate1 from "./../../images/category/cate-1.jpg";
+import cate2 from "./../../images/category/cate-2.jpg";
+import cate5 from "./../../images/category/cate-5.jpg";
 export default function FindProduct() {
   return (
     <div>
@@ -43,7 +47,23 @@ export default function FindProduct() {
         >
           <SwiperSlide>
             <div class="category-product">
-              <a href="shop-list.html">
+              <a href="/product">
+                <h5 class="title">Dogs</h5>
+                <img src={cate1} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Cates</h5>
+                <img src={cate2} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
               </a>
@@ -51,7 +71,39 @@ export default function FindProduct() {
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="shop-list.html">
+              <a href="/product">
+                <h5 class="title">Birds</h5>
+                <img src={cate4} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Hamter</h5>
+                <img src={cate5} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Dogs</h5>
+                <img src={cate1} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Cates</h5>
+                <img src={cate2} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
               </a>
@@ -59,7 +111,39 @@ export default function FindProduct() {
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="shop-list.html">
+              <a href="/product">
+                <h5 class="title">Birds</h5>
+                <img src={cate4} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Hamter</h5>
+                <img src={cate5} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Dogs</h5>
+                <img src={cate1} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
+                <h5 class="title">Cates</h5>
+                <img src={cate2} alt="/" />
+              </a>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div class="category-product">
+              <a href="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
               </a>
@@ -67,49 +151,17 @@ export default function FindProduct() {
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
+              <a href="/product">
+                <h5 class="title">Birds</h5>
+                <img src={cate4} alt="/" />
               </a>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
-              </a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div class="category-product">
-              <a href="shop-list.html">
-                <h5 class="title">Rabbits</h5>
-                <img src={cate3} alt="/" />
+              <a href="/product">
+                <h5 class="title">Hamter</h5>
+                <img src={cate5} alt="/" />
               </a>
             </div>
           </SwiperSlide>

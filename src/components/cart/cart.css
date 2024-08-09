@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1480px) {
     .content-inner {
-        padding-top: 120px;
+        padding-top: 50px;
         padding-bottom: 40px;
     }
 }
@@ -132,4 +132,14 @@
 }
 .shop-account .title{
     font-weight: 700;
+}
+
+
+
+@media only screen and (max-width: 775px) {
+    .mycart1 .check-tbl tbody tr td, .mycart1 .check-tbl thead th{
+        padding-left:0;
+        padding-right:0;
+    }
+
 }

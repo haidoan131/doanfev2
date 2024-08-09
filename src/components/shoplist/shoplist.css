@@ -17,7 +17,7 @@
     vertical-align: middle;
     display: table-cell;
     text-align: center;
-    padding: 90px 0 80px 0;
+    padding: 165px 0 80px 0;
 }
 .dz-bnr-inr h1, .dz-bnr-inr .h1 {
     font-size: 50px;
@@ -156,9 +156,9 @@
 }
 
 @media only screen and (max-width: 575px) {
-    .myfilter{
+    /* .myfilter{
         display:none
-    }
+    } */
 }
 @media only screen and (max-width: 1480px) {
     .filter-tag {
@@ -169,18 +169,21 @@
     .filter-wrapper {
         display: block;
     }
+   
 }
 .filter-wrapper .filter-left-area, .filter-wrapper .filter-right-area {
     display: flex;
     align-items: center;
 }
 @media only screen and (max-width: 575px) {
-    .filter-wrapper .filter-right-area .Category {
+    /* .filter-wrapper .filter-right-area .Category {
         display: none;
-    }
+    } */
 }
 
-
+.noUi-base, .noUi-connects {
+    width:95% !important;
+}
 .pagination {
     display: flex;
     justify-content: center;
