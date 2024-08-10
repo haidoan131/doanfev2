@@ -12,7 +12,7 @@ export default function ShopList() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(100);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(5); // Number of products per page
+  const [productsPerPage] = useState(4); // Number of products per page
   const [searchName, setSearchName] = useState(''); // State for search term
   const dispatch = useDispatch();
 
@@ -76,9 +76,9 @@ export default function ShopList() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
-                <li className="breadcrumb-item">Shop Standard</li>
+                <li className="breadcrumb-item">Shop</li>
               </ul>
             </nav>
           </div>
@@ -142,7 +142,7 @@ export default function ShopList() {
                 </div>
               </div>
             </div>
-            <div className="widget widget_categories">
+            <div className="widget widget_categories mycateshoplist">
               <h6 className="widget-title">Category</h6>
               <ul>
                 <li className={selectedCategory === 'dogfood' ? 'active' : ''} onClick={() => handleCategoryChange('dogfood')} ><a href="javascript:void(0);">Dog Food</a> ({dogfoodCount})</li>

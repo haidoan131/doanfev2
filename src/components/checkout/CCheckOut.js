@@ -39,8 +39,7 @@ export default function CCheckOut() {
         <h1>Your Order</h1>
         <p>${cartDetails}</p>
         <p>Total Price: $${totalPrice.toFixed(2)}</p>
-        <h3>Order Summary</h3>
-        ${items.map(item => `<div><img src="${item.img}" alt="${item.name}" style="max-width: 100px; max-height: 100px;"/><p>${item.name}<br/>Quantity: ${item.quantity}<br/>Price: $${item.price}</p></div>`).join('<br>')}
+       
       `
     };
 
@@ -70,9 +69,9 @@ export default function CCheckOut() {
             <nav aria-label="breadcrumb" className="breadcrumb-row">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
-                <li className="breadcrumb-item">Shop Standard</li>
+                <li className="breadcrumb-item">Check Out</li>
               </ul>
             </nav>
           </div>

@@ -232,3 +232,6 @@
 .widget {
     margin-bottom: 20px;
 }
+.mycateshoplist .active{
+    background-color: #fabe25;
+}

@@ -249,8 +249,8 @@ export default function Header(args) {
                 </button>
                 <div className="text-center w-100">Cart</div>
               </div>
-              <div className="">
-                <div className="row">
+              <div className="cart-right-header">
+                <div className="">
                   <div className="col-lg-12">
                     <table className="table ">
                       <thead>

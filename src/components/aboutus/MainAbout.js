@@ -22,9 +22,9 @@ export default function MainAbout() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
-                <li className="breadcrumb-item">Shop Standard</li>
+                <li className="breadcrumb-item">About Us</li>
               </ul>
             </nav>
           </div>

@@ -141,5 +141,33 @@
         padding-left:0;
         padding-right:0;
     }
+    .mycart1.table-responsive,.shop-form .apply-cou,.shop-form .updatecart {
+        margin-bottom: 15px !important;
+    }
+    
 
+}
+@media only screen and (max-width: 480px) {
+    .mycart1 .check-tbl tbody tr td, .mycart1 .check-tbl thead th{
+        padding-left:0;
+        padding-right:0;
+    }
+    .mycart1 .check-tbl thead th {
+        font-size: 12px;
+    }
+    .mycart1 .check-tbl tbody tr td {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 397px) {
+    .mycart1 .check-tbl tbody tr td, .mycart1 .check-tbl thead th{
+        padding-left:0;
+        padding-right:0;
+    }
+    .mycart1 .check-tbl thead th {
+        font-size: 9px;
+    }
+    .mycart1 .check-tbl tbody tr td {
+        font-size: 9px;
+    }
 }

@@ -81,12 +81,12 @@ export default function CProductDetail() {
                 <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={selectedProduct.img} />
+                <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide>
               <SwiperSlide>
-                <img src={selectedProduct.img} />
+                <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide> <SwiperSlide>
-                <img src={selectedProduct.img} />
+                <img src={selectedProduct.img} className="detailimg"/>
               </SwiperSlide>
             </Swiper>
           </div>

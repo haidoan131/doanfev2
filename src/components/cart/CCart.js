@@ -23,9 +23,9 @@ export default function CCart() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                  <a href="/">Home</a>
                 </li>
-                <li className="breadcrumb-item">Shop Standard</li>
+                <li className="breadcrumb-item">Cart</li>
               </ul>
             </nav>
           </div>
@@ -59,7 +59,7 @@ export default function CCart() {
               </div>
               <div class="row shop-form m-t30">
                 <div class="col-md-6">
-                  <div class="form-group">
+                  <div class="form-group apply-cou">
                     <div class="input-group mb-0">
                       <input
                         name="dzEmail"
@@ -81,9 +81,9 @@ export default function CCart() {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <a href="shop-cart.html" class="btn btn-secondary">
-                    UPDATE CART
+                <div class="col-md-6 updatecart">
+                  <a href="/product" class="btn btn-secondary">
+                    Buy More
                   </a>
                 </div>
               </div>
