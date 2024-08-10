@@ -8,12 +8,12 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { HashRouter  , Routes, Route } from "react-router-dom";
 AOS.init();
 function App() {
   return (
     <div className="App">
-      <BrowserRouter >
+      <HashRouter  >
         <Routes>
           <Route index element={<Home />}></Route>
           <Route path="/product" element={<Shop />}></Route>
@@ -23,7 +23,7 @@ function App() {
           <Route path="/about" element={<AboutUs />}></Route>
           <Route path="/contact" element={<ContactUs />}></Route>
         </Routes>
-      </BrowserRouter >
+      </HashRouter  >
       {/* <Shop/> */}
       {/* <Cart/> */}
       {/* <ProductDetail/> */}
