@@ -83,9 +83,9 @@ export default function CCart() {
                   </div>
                 </div>
                 <div class="col-md-6 updatecart">
-                  <a href="/product" class="btn btn-secondary">
+                  <Link to="/product" class="btn btn-secondary">
                     Buy More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -135,9 +135,9 @@ export default function CCart() {
                     </tr>
                   </tbody>
                 </table>
-                <a href="/checkout" class="btn btn-secondary w-100">
+                <Link to="/checkout" class="btn btn-secondary w-100">
                   PLACE ORDER
-                </a>
+                </Link>
               </div>
             </div>
 

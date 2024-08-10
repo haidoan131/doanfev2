@@ -171,10 +171,10 @@ export default function CCheckOut() {
                     <label className="label-title">Country / Region *</label>
                     <div className="form-select">
                       <select className="default-select w-100 d-block">
-                        <option selected>India</option>
+                        <option selected>VietNam</option>
                         <option value="1">Another option</option>
-                        <option value="2">UK</option>
-                        <option value="3">Iraq</option>
+                        <option value="2">Japan </option>
+                        <option value="3">Korean</option>
                       </select>
                     </div>
                   </div>
@@ -200,10 +200,10 @@ export default function CCheckOut() {
                     <label className="label-title">Town / City *</label>
                     <div className="form-select">
                       <select className="default-select w-100">
-                        <option selected>Kota</option>
+                        <option selected>HoChiMinh</option>
                         <option value="1">Another option</option>
-                        <option value="2">Jaipur</option>
-                        <option value="3">Udaipur</option>
+                        <option value="2">HaNoi</option>
+                        <option value="3">BÊntre</option>
                       </select>
                     </div>
                   </div>
@@ -213,10 +213,10 @@ export default function CCheckOut() {
                     <label className="label-title">State *</label>
                     <div className="form-select">
                       <select className="default-select w-100">
-                        <option selected>Rajasthan</option>
+                        <option selected>aaaaaaa</option>
                         <option value="1">Another option</option>
-                        <option value="2">Rajasthan</option>
-                        <option value="3">Rajasthan</option>
+                        <option value="2">bbbbbbbb</option>
+                        <option value="3">ccccccc</option>
                       </select>
                     </div>
                   </div>

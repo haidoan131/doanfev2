@@ -95,7 +95,7 @@ export default function CProductDetail() {
               <div class="dz-content-start">
                 <span class="badge bg-black mb-2">SALE 20% Off</span>
                 <h4 class="title mb-1">
-                  <a href="#">{selectedProduct.name}</a>
+                  <a >{selectedProduct.name}</a>
                 </h4>
                 <div class="review-num">
                   <ul class="dz-rating me-2">
@@ -223,14 +223,14 @@ export default function CProductDetail() {
 
             <div class="cart-btn">
               <button
-                href="shop-cart.html"
-                class="btn btn-md btn-secondary text-uppercase"
+               
+                
+               class="btn btn-md btn-secondary text-uppercase"
                 onClick={()=>handle_add(selectedProduct)}
               >
                 Add To Cart
               </button>
-              <a
-                href="shop-wishlist.html"
+              <a 
                 class="btn btn-outline-secondary btn-heart"
               >
                 <svg

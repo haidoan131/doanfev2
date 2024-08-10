@@ -15,7 +15,7 @@ export default function LatestPost() {
         >
           <h2 class="title">Latest Post</h2>
           <a
-            href="blog-post-style-2.html"
+          
             target="_blank"
             class="btn btn-secondary"
           >
@@ -46,7 +46,7 @@ export default function LatestPost() {
             },
           }}
       >
-        <SwiperSlide>
+         <SwiperSlide>
           <div
             className="swiper-slide swiper-slide-active"
             role="group"
@@ -64,12 +64,12 @@ export default function LatestPost() {
               <div className="dz-info">
                 <div className="post-date mb-2">17 May 2024</div>
                 <h5 className="mb-3">
-                  <a href="blog-post-style-3.html">
+                  <a >
                     Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
                   </a>
                 </h5>
                 <a
-                  href="blog-author.html"
+                 
                   className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
                 >
                   Read More
@@ -118,12 +118,12 @@ export default function LatestPost() {
               <div className="dz-info">
                 <div className="post-date mb-2">17 May 2024</div>
                 <h5 className="mb-3">
-                  <a href="blog-post-style-3.html">
+                  <a >
                     Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
                   </a>
                 </h5>
                 <a
-                  href="blog-author.html"
+                 
                   className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
                 >
                   Read More
@@ -172,12 +172,12 @@ export default function LatestPost() {
               <div className="dz-info">
                 <div className="post-date mb-2">17 May 2024</div>
                 <h5 className="mb-3">
-                  <a href="blog-post-style-3.html">
+                  <a >
                     Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
                   </a>
                 </h5>
                 <a
-                  href="blog-author.html"
+                 
                   className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
                 >
                   Read More
@@ -226,12 +226,12 @@ export default function LatestPost() {
               <div className="dz-info">
                 <div className="post-date mb-2">17 May 2024</div>
                 <h5 className="mb-3">
-                  <a href="blog-post-style-3.html">
+                  <a >
                     Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
                   </a>
                 </h5>
                 <a
-                  href="blog-author.html"
+                 
                   className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
                 >
                   Read More
@@ -280,12 +280,282 @@ export default function LatestPost() {
               <div className="dz-info">
                 <div className="post-date mb-2">17 May 2024</div>
                 <h5 className="mb-3">
-                  <a href="blog-post-style-3.html">
+                  <a >
                     Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
                   </a>
                 </h5>
                 <a
-                  href="blog-author.html"
+                 
+                  className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
+                >
+                  Read More
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M8 3.33325L12.6667 7.99992L8 12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 10"
+            style={{ width: "380px", marginRight: "15px" }}
+            data-swiper-slide-index="0"
+          >
+            <div
+              className="dz-card style-1 wow fadeInUp card-content"
+              data-wow-delay="0.2s"
+            >
+              <div className="dz-media">
+                <img src={lt2} alt="" />
+              </div>
+              <div className="dz-info">
+                <div className="post-date mb-2">17 May 2024</div>
+                <h5 className="mb-3">
+                  <a >
+                    Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
+                  </a>
+                </h5>
+                <a
+                 
+                  className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
+                >
+                  Read More
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M8 3.33325L12.6667 7.99992L8 12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 10"
+            style={{ width: "380px", marginRight: "15px" }}
+            data-swiper-slide-index="0"
+          >
+            <div
+              className="dz-card style-1 wow fadeInUp card-content"
+              data-wow-delay="0.2s"
+            >
+              <div className="dz-media">
+                <img src={lt2} alt="" />
+              </div>
+              <div className="dz-info">
+                <div className="post-date mb-2">17 May 2024</div>
+                <h5 className="mb-3">
+                  <a >
+                    Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
+                  </a>
+                </h5>
+                <a
+                 
+                  className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
+                >
+                  Read More
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M8 3.33325L12.6667 7.99992L8 12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 10"
+            style={{ width: "380px", marginRight: "15px" }}
+            data-swiper-slide-index="0"
+          >
+            <div
+              className="dz-card style-1 wow fadeInUp card-content"
+              data-wow-delay="0.2s"
+            >
+              <div className="dz-media">
+                <img src={lt2} alt="" />
+              </div>
+              <div className="dz-info">
+                <div className="post-date mb-2">17 May 2024</div>
+                <h5 className="mb-3">
+                  <a >
+                    Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
+                  </a>
+                </h5>
+                <a
+                 
+                  className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
+                >
+                  Read More
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M8 3.33325L12.6667 7.99992L8 12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 10"
+            style={{ width: "380px", marginRight: "15px" }}
+            data-swiper-slide-index="0"
+          >
+            <div
+              className="dz-card style-1 wow fadeInUp card-content"
+              data-wow-delay="0.2s"
+            >
+              <div className="dz-media">
+                <img src={lt2} alt="" />
+              </div>
+              <div className="dz-info">
+                <div className="post-date mb-2">17 May 2024</div>
+                <h5 className="mb-3">
+                  <a >
+                    Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
+                  </a>
+                </h5>
+                <a
+                 
+                  className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
+                >
+                  Read More
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="M8 3.33325L12.6667 7.99992L8 12.6666"
+                      stroke="black"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="swiper-slide swiper-slide-active"
+            role="group"
+            aria-label="1 / 10"
+            style={{ width: "380px", marginRight: "15px" }}
+            data-swiper-slide-index="0"
+          >
+            <div
+              className="dz-card style-1 wow fadeInUp card-content"
+              data-wow-delay="0.2s"
+            >
+              <div className="dz-media">
+                <img src={lt2} alt="" />
+              </div>
+              <div className="dz-info">
+                <div className="post-date mb-2">17 May 2024</div>
+                <h5 className="mb-3">
+                  <a >
+                    Whisker Wonderland Gateway to Pet Bliss Chronicles Tales
+                  </a>
+                </h5>
+                <a
+                 
                   className="btn btn-outline-secondary btn-icon d-inline-block posbtn"
                 >
                   Read More

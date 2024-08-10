@@ -110,8 +110,8 @@ export default function Header(args) {
                   About
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem > <Link to="/about">About Us</Link></DropdownItem>
-                  <DropdownItem ><Link to="/contact">Contact Us</Link></DropdownItem>
+                <Link to="/about"> <DropdownItem > About Us</DropdownItem></Link>
+                <Link to="/contact">  <DropdownItem >Contact Us</DropdownItem></Link>
                   {/* <DropdownItem divider />
                   <DropdownItem>Reset</DropdownItem> */}
                 </DropdownMenu>
@@ -279,8 +279,8 @@ export default function Header(args) {
                 <h6 class="mb-0">{totalPrice}.00$</h6>
               </div>
 
-              <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mybuttoncart"><Link to="/checkout">Checkout</Link></a>
-              <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mt-2 mybuttoncart"><Link to="/cart">View Cart</Link></a>
+              <Link to="/checkout">  <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mybuttoncart">Checkout</a></Link>
+              <Link to="/cart">  <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mt-2 mybuttoncart">View Cart</a></Link>
             </div>
           </div>
         </div>
