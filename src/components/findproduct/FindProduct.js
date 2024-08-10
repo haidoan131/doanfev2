@@ -2,7 +2,7 @@ import React from "react";
 import "./findproduct.css";
 import { Container } from "reactstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from 'react-router-dom';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -47,122 +47,122 @@ export default function FindProduct() {
         >
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Dogs</h5>
                 <img src={cate1} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Cates</h5>
                 <img src={cate2} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Birds</h5>
                 <img src={cate4} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Hamter</h5>
                 <img src={cate5} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Dogs</h5>
                 <img src={cate1} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Cates</h5>
                 <img src={cate2} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Birds</h5>
                 <img src={cate4} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Hamter</h5>
                 <img src={cate5} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Dogs</h5>
                 <img src={cate1} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Cates</h5>
                 <img src={cate2} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Rabbits</h5>
                 <img src={cate3} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Birds</h5>
                 <img src={cate4} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div class="category-product">
-              <a href="/product">
+              <Link to="/product">
                 <h5 class="title">Hamter</h5>
                 <img src={cate5} alt="/" />
-              </a>
+              </Link>
             </div>
           </SwiperSlide>
         </Swiper>

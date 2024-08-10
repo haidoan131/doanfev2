@@ -2,7 +2,7 @@ import React from 'react';
 import pic5 from './../../images/shop/shop-cart/pic4.jpg';
 import { useDispatch } from 'react-redux';
 import { increaseQuantity, decreaseQuantity, removeItem } from './../../redux/cartSlice';
-
+import { Link } from 'react-router-dom';
 export default function CartProduct(props) {
   const { item } = props;
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ console.log("load lai khong")
       <td className="product-item-img">
         <img src={item.img} alt={item.name} />
       </td>
-      <td className="product-item-name">{item.name}</td>
+      <td className="product-item-name">  <Link to={`/detail/${item.id}`}>{item.name}</Link></td>
       <td className="product-item-price">${item.price.toFixed(2)}</td>
       <td className="product-item-quantity">
         <div className="quantity btn-quantity-2 style-1 me-3">

@@ -20,6 +20,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import CartProduct from "./../cart/CartProduct";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
 export default function Header(args) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -76,11 +77,11 @@ export default function Header(args) {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="/product"
+                
                   data-aos="zoom-in"
                   data-aos-duration="1500"
                 >
-                  Products
+               <Link to="/product">Products</Link>   
                   <svg
                     width="12"
                     height="12"
@@ -107,22 +108,22 @@ export default function Header(args) {
                   About
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem href="/about">About Us</DropdownItem>
-                  <DropdownItem href="/contact">Contact us</DropdownItem>
+                  <DropdownItem > <Link to="/about">About Us</Link></DropdownItem>
+                  <DropdownItem ><Link to="/contact">Contact Us</Link></DropdownItem>
                   {/* <DropdownItem divider />
                   <DropdownItem>Reset</DropdownItem> */}
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
-              <a className="nav-link" href="/">
+              <a className="nav-link"  href="javascript:void(0);">
                 Login / Register
               </a>
             </NavbarText>
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
-              <a
+              <Link
                 className="nav-link"
-                href="/product"
+                to="/product"
                 
               >
                 <svg
@@ -148,7 +149,7 @@ export default function Header(args) {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </NavbarText>
             <NavbarText data-aos="fade-left" data-aos-duration="2000">
               <a
@@ -276,8 +277,8 @@ export default function Header(args) {
                 <h6 class="mb-0">{totalPrice}.00$</h6>
               </div>
 
-              <a href="/checkout" class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mybuttoncart">Checkout</a>
-              <a href="/cart" class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mt-2 mybuttoncart">View Cart</a>
+              <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mybuttoncart"><Link to="/checkout">Checkout</Link></a>
+              <a  class="btn btn-block m-b20 btn-outline-secondary btn-icon w-100 mt-2 mybuttoncart"><Link to="/cart">View Cart</Link></a>
             </div>
           </div>
         </div>
