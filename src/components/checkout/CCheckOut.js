@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 export default function CCheckOut() {
   const [email, setEmail] = useState("");
   const { items } = useSelector(state => state.carts);
@@ -69,7 +70,7 @@ export default function CCheckOut() {
             <nav aria-label="breadcrumb" className="breadcrumb-row">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="/">Home</a>
+                <Link to="/home">Home</Link>
                 </li>
                 <li className="breadcrumb-item">Check Out</li>
               </ul>

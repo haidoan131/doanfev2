@@ -16,6 +16,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route index element={<Home />}></Route>
+          <Route path="/home" element={<Home />}></Route> 
           <Route path="/product" element={<Shop />}></Route>
           <Route path="/detail/:id" element={<ProductDetail />}></Route>
           <Route path="/checkout" element={<CheckOut />}></Route>

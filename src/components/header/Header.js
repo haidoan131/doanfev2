@@ -45,8 +45,10 @@ export default function Header(args) {
           data-aos-duration="1000"
           className=""
         >
-          <NavbarBrand href="/" data-aos="fade-right" data-aos-duration="1500">
+          <NavbarBrand  data-aos="fade-right" data-aos-duration="1500">
+            <Link to="/home">
             <img src={logo} alt="logo" className="logo-header" />
+            </Link>
           </NavbarBrand>
 
           <NavbarToggler
@@ -57,8 +59,8 @@ export default function Header(args) {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="me-auto" navbar>
               <NavItem>
-                <NavLink href="/" data-aos="zoom-in" data-aos-duration="1500">
-                  Home
+                <NavLink  data-aos="zoom-in" data-aos-duration="1500">
+                <Link to="/home"> Home  </Link>
                   <svg
                     width="12"
                     height="12"

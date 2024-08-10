@@ -4,6 +4,7 @@ import pic5 from "./../../images/shop/shop-cart/pic4.jpg";
 import picc2 from "./../../images/shop/shop-cart/pic4.jpg"
 import CartProduct from "./CartProduct";
 import {useSelector,useDispatch} from "react-redux"
+import { Link } from 'react-router-dom';
 export default function CCart() {
   const dispatch=useDispatch()
   const {items}=useSelector(state=>state.carts)
@@ -23,7 +24,7 @@ export default function CCart() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="/">Home</a>
+                <Link to="/home">Home</Link>
                 </li>
                 <li className="breadcrumb-item">Cart</li>
               </ul>

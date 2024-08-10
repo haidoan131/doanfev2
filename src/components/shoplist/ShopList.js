@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./shoplist.css";
-
+import { Link } from 'react-router-dom';
 import ProductCard from "./../healthyfood/ProductCard";
 import { fetchUserData1, setCategory } from "./../../redux/productapiSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -76,7 +76,7 @@ export default function ShopList() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="/">Home</a>
+                  <Link to="/home">Home</Link>
                 </li>
                 <li className="breadcrumb-item">Shop</li>
               </ul>

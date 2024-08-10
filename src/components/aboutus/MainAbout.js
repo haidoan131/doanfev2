@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import tes5 from "./../../images/testimonial/testimonial5.jpg";
+import { Link } from 'react-router-dom';
 export default function MainAbout() {
   return (
     <div>
@@ -22,7 +23,7 @@ export default function MainAbout() {
             <nav aria-label="breadcrumb" className="breadcrumb-row ">
               <ul className="breadcrumb text-center">
                 <li className="breadcrumb-item">
-                  <a href="/">Home</a>
+                <Link to="/home">Home</Link>
                 </li>
                 <li className="breadcrumb-item">About Us</li>
               </ul>
