@@ -16,12 +16,12 @@ function App() {
       <HashRouter  >
         <Routes>
           <Route index element={<Home />}></Route>
-          <Route path="/product" element={<Shop />}></Route>
-          <Route path="/detail/:id" element={<ProductDetail />}></Route>
-          <Route path="/checkout" element={<CheckOut />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/about" element={<AboutUs />}></Route>
-          <Route path="/contact" element={<ContactUs />}></Route>
+          <Route path="doanfe/product" element={<Shop />}></Route>
+          <Route path="doanfe/detail/:id" element={<ProductDetail />}></Route>
+          <Route path="doanfe/checkout" element={<CheckOut />}></Route>
+          <Route path="doanfe/cart" element={<Cart />}></Route>
+          <Route path="doanfe/about" element={<AboutUs />}></Route>
+          <Route path="doanfe/contact" element={<ContactUs />}></Route>
         </Routes>
       </HashRouter  >
       {/* <Shop/> */}
