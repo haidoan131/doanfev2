@@ -37,9 +37,11 @@ export default function CCheckOut() {
       to_email: email,
       subject: 'Your Order Details',
       message: `
-        <h1>Your Order</h1>
+                <h1>Your Order</h1>
         <p>${cartDetails}</p>
         <p>Total Price: $${totalPrice.toFixed(2)}</p>
+        <h3>Order Summary</h3>
+        ${items.map(item => `<div><img src="${item.img}" alt="${item.name}" style="max-width: 100px; max-height: 100px;"/><p>${item.name}<br/>Quantity: ${item.quantity}<br/>Price: $${item.price}</p></div>`).join('<br>')}
        
       `
     };
